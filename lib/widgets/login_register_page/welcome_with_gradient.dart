@@ -6,30 +6,46 @@ import '../../styles/styles.dart';
 class WelcomeWithGradient extends StatelessWidget {
   const WelcomeWithGradient({
     Key? key,
+    required this.tap,
   }) : super(key: key);
+  final VoidCallback? tap;
 
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: 130,
       decoration: BoxDecoration(
-        gradient: LinearGradient(colors: appBarColor),
+        gradient: LinearGradient(
+          colors: appBarColor,
+          begin: Alignment.topCenter,
+          end: Alignment.bottomCenter,
+        ),
       ),
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 17.0, vertical: 40),
         child: Row(
           children: [
-            SvgPicture.asset(
-              "assets/icons/back_button.svg",
-              color: Colors.white,
+            GestureDetector(
+              onTap: tap,
+              child: Container(
+                padding: const EdgeInsets.only(top: 15),
+                child: SvgPicture.asset(
+                  "assets/icons/back_button.svg",
+                  color: Colors.white,
+                ),
+              ),
             ),
-            const SizedBox(width: 140),
-            Text(
-              "Welcome",
-              style: TextStyle(
-                fontFamily: primaryFontFamily,
-                fontSize: 18,
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
+            const SizedBox(width: 130),
+            Container(
+              padding: const EdgeInsets.only(top: 15),
+              child: Text(
+                "Welcome",
+                style: TextStyle(
+                  fontFamily: primaryFontFamily,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
               ),
             ),
           ],

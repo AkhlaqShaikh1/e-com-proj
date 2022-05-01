@@ -34,10 +34,18 @@ class CustomTextField extends StatelessWidget {
         children: [
           Center(
             child: Container(
-                margin: const EdgeInsets.only(top: 5),
-                child: imgName == "email"
-                    ? SvgPicture.asset("assets/icons/$imgName.svg", height: 15)
-                    : Icon(Icons.lock_outline_sharp, color: subtitleColor)),
+              margin: const EdgeInsets.only(top: 5),
+              child: imgName == "email" || imgName == "phone"
+                  ? SvgPicture.asset(
+                      "assets/icons/$imgName.svg",
+                      height: 20,
+                      color: subtitleColor,
+                    )
+                  : Icon(
+                      Icons.lock_outline_sharp,
+                      color: subtitleColor,
+                    ),
+            ),
           ),
           Center(
             child: Container(

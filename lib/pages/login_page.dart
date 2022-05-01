@@ -5,10 +5,11 @@ import 'package:e_commerece_app_project/styles/styles.dart';
 
 import '../widgets/login_register_page/custom_text_field.dart';
 import '../widgets/login_register_page/welcome_with_gradient.dart';
+import 'register_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
-
+  static String id = "/login";
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
@@ -26,10 +27,10 @@ class _LoginPageState extends State<LoginPage> {
           Stack(
             children: [
               Image.asset("assets/images/women_2.jpg"),
-              const WelcomeWithGradient(),
+              WelcomeWithGradient(tap: () {}),
               Container(
                 margin: const EdgeInsets.only(top: 440),
-                height: size.height * 0.50,
+                height: size.height * 0.47,
                 width: size.width,
                 decoration: BoxDecoration(
                   color: white,
@@ -106,25 +107,35 @@ class _LoginPageState extends State<LoginPage> {
                       MyButton(size: size, title: "Login"),
                       const SizedBox(height: 15),
                       Center(
-                        child: RichText(
-                          text: TextSpan(
-                            text: "Don't have an account?",
-                            children: [
-                              TextSpan(
-                                text: " Sign up",
+                        child: GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(context, RegisterPage.id);
+                          },
+                          child: GestureDetector(
+                            onTap: () {
+                              Navigator.pushNamed(context, RegisterPage.id);
+                            },
+                            child: RichText(
+                              text: TextSpan(
+                                text: "Don't have an account?",
+                                children: [
+                                  TextSpan(
+                                    text: " Sign up",
+                                    style: TextStyle(
+                                      color: Colors.black,
+                                      fontFamily: primaryFontFamily,
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.w800,
+                                    ),
+                                  ),
+                                ],
                                 style: TextStyle(
-                                  color: Colors.black,
+                                  color: subtitleColor,
                                   fontFamily: primaryFontFamily,
                                   fontSize: 14,
-                                  fontWeight: FontWeight.w800,
+                                  fontWeight: FontWeight.w300,
                                 ),
                               ),
-                            ],
-                            style: TextStyle(
-                              color: subtitleColor,
-                              fontFamily: primaryFontFamily,
-                              fontSize: 14,
-                              fontWeight: FontWeight.w300,
                             ),
                           ),
                         ),
