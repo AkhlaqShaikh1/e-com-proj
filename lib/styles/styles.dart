@@ -6,8 +6,14 @@ List<Color> primaryButtonColor = const [
   Color.fromRGBO(174, 220, 129, 1),
   Color.fromRGBO(108, 197, 29, 1),
 ];
+List<Color> appBarColor = const [
+  Color.fromRGBO(0, 0, 0, 1),
+  Color.fromRGBO(0, 0, 0, 0),
+];
 
 Color forgotPassColor = const Color.fromRGBO(64, 126, 199, 1);
+Color white = const Color(0xffF4F5F9);
+Color subtitleColor = const Color(0xff868889);
 
 //Fonts
 

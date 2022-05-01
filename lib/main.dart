@@ -13,6 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return const MaterialApp(
       title: 'E-Commerece Demo',
+      debugShowCheckedModeBanner: false,
       home: LoginPage(),
     );
   }
