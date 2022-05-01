@@ -1,3 +1,3 @@
-# e_commerece_app_project
+# E-Commerece App
 
 An E-Commerece App made with Collaboration
