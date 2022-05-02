@@ -1,5 +1,6 @@
-import 'package:e_commerece_app_project/pages/login_page.dart';
 import 'package:flutter/material.dart';
+
+import 'package:e_commerece_app_project/pages/login_page.dart';
 
 import '../styles/styles.dart';
 import '../widgets/login_register_page/custom_text_field.dart';
@@ -7,7 +8,9 @@ import '../widgets/login_register_page/my_button.dart';
 import '../widgets/login_register_page/welcome_with_gradient.dart';
 
 class RegisterPage extends StatefulWidget {
-  const RegisterPage({Key? key}) : super(key: key);
+  const RegisterPage({
+    Key? key,
+  }) : super(key: key);
   static String id = "/register";
 
   @override
@@ -32,7 +35,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 tap: tap,
               ),
               Container(
-                margin: const EdgeInsets.only(top: 415),
+                margin: EdgeInsets.only(top: size.height * 0.5),
                 height: size.height * 0.5,
                 width: size.width,
                 decoration: BoxDecoration(
@@ -51,26 +54,28 @@ class _RegisterPageState extends State<RegisterPage> {
                       Text("Create Account", style: headerTextStyle),
                       Text("Quickly create account", style: subtitleTextStyle),
                       const SizedBox(height: 10),
-                      const CustomTextField(
+                      CustomTextField(
                         isPassword: false,
                         imgName: "email",
                         title: "Email Address",
+                        size: size,
                       ),
                       const SizedBox(height: 5),
-                      const CustomTextField(
+                      CustomTextField(
                         isPassword: false,
                         imgName: "phone",
                         title: "Phone number",
+                        size: size,
                       ),
                       const SizedBox(height: 5),
-                      const CustomTextField(
+                      CustomTextField(
                         isPassword: true,
                         imgName: "password",
                         title: "Password",
+                        size: size,
                       ),
                       const SizedBox(height: 10),
                       MyButton(size: size, title: "Register"),
-                      const SizedBox(height: 15),
                       Center(
                         child: GestureDetector(
                           onTap: () {

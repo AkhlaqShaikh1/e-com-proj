@@ -9,11 +9,13 @@ class CustomTextField extends StatelessWidget {
     required this.isPassword,
     required this.imgName,
     required this.title,
+    required this.size,
   }) : super(key: key);
 
   final bool isPassword;
   final String imgName;
   final String title;
+  final Size size;
 
   @override
   Widget build(BuildContext context) {
@@ -49,8 +51,8 @@ class CustomTextField extends StatelessWidget {
           ),
           Center(
             child: Container(
-              width: 100,
-              margin: const EdgeInsets.only(left: 21),
+              width: size.width * 0.3,
+              margin: const EdgeInsets.only(left: 21, top: 21),
               child: TextField(
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(
