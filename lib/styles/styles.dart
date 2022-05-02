@@ -18,3 +18,20 @@ Color subtitleColor = const Color(0xff868889);
 //Fonts
 
 var primaryFontFamily = GoogleFonts.poppins().fontFamily;
+
+// TextStyles
+
+TextStyle headerTextStyle = TextStyle(
+  fontFamily: primaryFontFamily,
+  fontWeight: FontWeight.w600,
+  fontSize: 25,
+  letterSpacing: 0.13,
+);
+
+TextStyle subtitleTextStyle = TextStyle(
+  fontFamily: primaryFontFamily,
+  fontWeight: FontWeight.w400,
+  fontSize: 15,
+  color: subtitleColor,
+  letterSpacing: 0.13,
+);

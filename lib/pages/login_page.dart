@@ -47,22 +47,11 @@ class _LoginPageState extends State<LoginPage> {
                     children: [
                       Text(
                         "Welcome back !",
-                        style: TextStyle(
-                          fontFamily: primaryFontFamily,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 25,
-                          letterSpacing: 0.13,
-                        ),
+                        style: headerTextStyle,
                       ),
                       Text(
                         "Sign in to your account",
-                        style: TextStyle(
-                          fontFamily: primaryFontFamily,
-                          fontWeight: FontWeight.w400,
-                          color: subtitleColor,
-                          fontSize: 15,
-                          letterSpacing: 0.13,
-                        ),
+                        style: subtitleTextStyle,
                       ),
                       const SizedBox(height: 10),
                       const CustomTextField(
@@ -83,23 +72,15 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           Text(
                             "Remember me",
-                            style: TextStyle(
-                              color: subtitleColor,
-                              fontSize: 15,
-                              letterSpacing: 0.15,
-                              fontWeight: FontWeight.w500,
-                              fontFamily: primaryFontFamily,
-                            ),
+                            style: subtitleTextStyle.copyWith(
+                                fontWeight: FontWeight.w500),
                           ),
                           const Spacer(),
                           Text(
                             "Forgot Password",
-                            style: TextStyle(
+                            style: subtitleTextStyle.copyWith(
                               color: const Color(0xff407EC7),
-                              fontSize: 15,
-                              letterSpacing: 0.15,
                               fontWeight: FontWeight.w700,
-                              fontFamily: primaryFontFamily,
                             ),
                           ),
                         ],

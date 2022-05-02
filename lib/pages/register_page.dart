@@ -28,9 +28,9 @@ class _RegisterPageState extends State<RegisterPage> {
           Stack(
             children: [
               Image.asset("assets/images/women_1.jpg"),
-              WelcomeWithGradient(tap: (() {
-                Navigator.pop(context);
-              })),
+              WelcomeWithGradient(
+                tap: tap,
+              ),
               Container(
                 margin: const EdgeInsets.only(top: 415),
                 height: size.height * 0.5,
@@ -48,25 +48,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "Create Account",
-                        style: TextStyle(
-                          fontFamily: primaryFontFamily,
-                          fontWeight: FontWeight.w600,
-                          fontSize: 25,
-                          letterSpacing: 0.13,
-                        ),
-                      ),
-                      Text(
-                        "Quickly create account",
-                        style: TextStyle(
-                          fontFamily: primaryFontFamily,
-                          fontWeight: FontWeight.w400,
-                          color: subtitleColor,
-                          fontSize: 15,
-                          letterSpacing: 0.13,
-                        ),
-                      ),
+                      Text("Create Account", style: headerTextStyle),
+                      Text("Quickly create account", style: subtitleTextStyle),
                       const SizedBox(height: 10),
                       const CustomTextField(
                         isPassword: false,
@@ -126,5 +109,9 @@ class _RegisterPageState extends State<RegisterPage> {
         ]),
       ),
     );
+  }
+
+  tap() {
+    Navigator.pop(context);
   }
 }
